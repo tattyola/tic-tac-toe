@@ -1,0 +1,6 @@
+{
+  "$schema": "https://on.cypress.io/cypress.schema.json",
+  "baseUrl": "https://cdpn.io/CalendlyQA/fullpage/KKPQLmV",
+  "video": false,
+  "chromeWebSecurity": false
+}
