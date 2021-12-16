@@ -6,8 +6,10 @@ describe('tic-tac-toe', function () {
 
     it('scenario - first player wins', function () {
         cy.title().should('eq', 'CodePen - QA Interview Assignment')  // should be fixed 'QA Interview Assignment'
+
         cy.get('#result').within(function ($iFrame) {
             const iFrameContent = $iFrame.contents().find('body')
+
             cy.wrap(iFrameContent)
                 .find('#number')
                 .should('be.visible');
@@ -38,7 +40,7 @@ describe('tic-tac-toe', function () {
     })
 
     it('scenario - second player wins', function () {
-        cy.title().should('eq', 'CodePen - QA Interview Assignment')  // should be fixed 'QA Interview Assignment'
+        // cy.title().should('eq', 'CodePen - QA Interview Assignment')  // should be fixed 'QA Interview Assignment'
         cy.get('#result').within(function ($iFrame) {
             const iFrameContent = $iFrame.contents().find('body')
             cy.wrap(iFrameContent)
@@ -73,7 +75,7 @@ describe('tic-tac-toe', function () {
     })
 
     it('scenario - draw', function () {
-        cy.title().should('eq', 'CodePen - QA Interview Assignment')  // should be fixed 'QA Interview Assignment'
+        // cy.title().should('eq', 'CodePen - QA Interview Assignment')  // should be fixed 'QA Interview Assignment'
         cy.get('#result').within(function ($iFrame) {
             const iFrameContent = $iFrame.contents().find('body')
             cy.wrap(iFrameContent)

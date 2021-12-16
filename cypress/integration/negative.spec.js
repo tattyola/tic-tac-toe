@@ -27,7 +27,7 @@ describe('negative tests', function () {
             //     .find('#start').should('be.disabled');
             // cy.wrap(iFrameContent)
             //     .find('#table')
-            //     .should('be.disabled'); // should be fixed
+            //     .should('be.disabled');
         })
     })
 })
