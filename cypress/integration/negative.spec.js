@@ -24,10 +24,10 @@ describe('negative tests', function () {
                 .find('div#endgame')
                 .should('be.visible');
             cy.wrap(iFrameContent)
-                .find('#start').should('be.disabled'); // bug. start should be disabled
+                .find('#start').should('be.disabled'); // actual result: start is enabled
             cy.wrap(iFrameContent)
                 .find('#table')
-                .should('be.disabled'); // bug. table should be disabled
+                .should('be.disabled'); // actual result: table is enabled
         })
     })
 })

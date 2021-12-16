@@ -35,7 +35,7 @@ describe('tic-tac-toe', function () {
                 .find('td[id="6"]').click(); //x
             cy.wrap(iFrameContent)
                 .find('div#endgame')
-                .should('have.text', 'Congratulations player O! You\'ve won. Refresh to play again!'); // bug, should be player X
+                .should('have.text', 'Congratulations player X! You\'ve won. Refresh to play again!'); // actual result: player O
         })
     })
 
@@ -70,7 +70,7 @@ describe('tic-tac-toe', function () {
                 .find('td[id="6"]').click(); //0
             cy.wrap(iFrameContent)
                 .find('div#endgame')
-                .should('have.text', 'Congratulations player X! You\'ve won. Refresh to play again!'); // bug should be player O
+                .should('have.text', 'Congratulations player O! You\'ve won. Refresh to play again!'); // actual result: player X
         })
     })
 
@@ -111,7 +111,7 @@ describe('tic-tac-toe', function () {
                 .find('td[id="8"]').click(); //X
             cy.wrap(iFrameContent)
                 .find('div#endgame')
-                .should('have.text', 'Draw. Refresh to play again!'); // bug message should pop out
+                .should('have.text', 'Draw. Refresh to play again!'); // actual result: no message pops out
         })
     })
 })
