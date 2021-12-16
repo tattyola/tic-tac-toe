@@ -23,11 +23,11 @@ describe('negative tests', function () {
             cy.wrap(iFrameContent)
                 .find('div#endgame')
                 .should('be.visible');
-            // cy.wrap(iFrameContent)
-            //     .find('#start').should('be.disabled');
-            // cy.wrap(iFrameContent)
-            //     .find('#table')
-            //     .should('be.disabled');
+            cy.wrap(iFrameContent)
+                .find('#start').should('be.disabled'); // bug. start should be disabled
+            cy.wrap(iFrameContent)
+                .find('#table')
+                .should('be.disabled'); // bug. table should be disabled
         })
     })
 })

@@ -5,10 +5,10 @@ describe('tic-tac-toe', function () {
     })
 
     it('scenario - first player wins', function () {
-        cy.title().should('eq', 'CodePen - QA Interview Assignment')  // should be fixed 'QA Interview Assignment'
+        cy.title().should('eq', 'CodePen - QA Interview Assignment');
 
         cy.get('#result').within(function ($iFrame) {
-            const iFrameContent = $iFrame.contents().find('body')
+            const iFrameContent = $iFrame.contents().find('body');
 
             cy.wrap(iFrameContent)
                 .find('#number')
@@ -35,12 +35,12 @@ describe('tic-tac-toe', function () {
                 .find('td[id="6"]').click(); //x
             cy.wrap(iFrameContent)
                 .find('div#endgame')
-                .should('have.text', 'Congratulations player O! You\'ve won. Refresh to play again!'); // should be fixed 'player X'
+                .should('have.text', 'Congratulations player O! You\'ve won. Refresh to play again!'); // bug, should be player X
         })
     })
 
     it('scenario - second player wins', function () {
-        // cy.title().should('eq', 'CodePen - QA Interview Assignment')  // should be fixed 'QA Interview Assignment'
+        cy.title().should('eq', 'CodePen - QA Interview Assignment');
         cy.get('#result').within(function ($iFrame) {
             const iFrameContent = $iFrame.contents().find('body')
             cy.wrap(iFrameContent)
@@ -70,12 +70,12 @@ describe('tic-tac-toe', function () {
                 .find('td[id="6"]').click(); //0
             cy.wrap(iFrameContent)
                 .find('div#endgame')
-                .should('have.text', 'Congratulations player X! You\'ve won. Refresh to play again!'); // should be fixed 'player 0'
+                .should('have.text', 'Congratulations player X! You\'ve won. Refresh to play again!'); // bug should be player O
         })
     })
 
     it('scenario - draw', function () {
-        // cy.title().should('eq', 'CodePen - QA Interview Assignment')  // should be fixed 'QA Interview Assignment'
+        cy.title().should('eq', 'CodePen - QA Interview Assignment');
         cy.get('#result').within(function ($iFrame) {
             const iFrameContent = $iFrame.contents().find('body')
             cy.wrap(iFrameContent)
@@ -109,9 +109,9 @@ describe('tic-tac-toe', function () {
                 .find('td[id="5"]').click(); //0
             cy.wrap(iFrameContent)
                 .find('td[id="8"]').click(); //X
-            // cy.wrap(iFrameContent)
-            //     .find('div#endgame')
-            //     .should('have.text', 'Draw. Refresh to play again!'); // should be fixed
+            cy.wrap(iFrameContent)
+                .find('div#endgame')
+                .should('have.text', 'Draw. Refresh to play again!'); // bug message should pop out
         })
     })
 })
